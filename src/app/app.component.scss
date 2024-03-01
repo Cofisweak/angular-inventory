@@ -1,0 +1,30 @@
+* {
+  font-family: Minecraft, sans-serif;
+  font-weight: 600;
+}
+
+.openButton {
+  background-color: #c6c6c6;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.inventory-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("/assets/fonts/minecraft/MinecraftRegular-Bmg3.otf");
+  font-weight: normal;
+  font-style: normal;
+}

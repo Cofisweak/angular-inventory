@@ -1,0 +1,13 @@
+<div class="inventory" cdkDropListGroup>
+  <div class="cell"
+       cdkDropList [cdkDropListData]="item"
+       *ngFor="let item of inventory; index as i"
+  >
+    <app-item
+      [item]="item"
+      (cdkDragDropped)="drop($event)"
+      *ngIf="item.id !== ITEMS_IDS.EMPTY"
+      cdkDrag cdkDragBoundary=".inventory"
+    ></app-item>
+  </div>
+</div>

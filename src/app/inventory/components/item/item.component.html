@@ -1,0 +1,5 @@
+<div class="item">
+  <img class="item__icon" [src]="item.image" [alt]="item.name">
+  <span class="item__amount" *ngIf="item.stackable">{{item.amount}}</span>
+</div>
+
