@@ -4,10 +4,25 @@
        *ngFor="let item of inventory; index as i"
   >
     <app-item
-      [item]="item"
-      (cdkDragDropped)="drop($event)"
       *ngIf="item.id !== ITEMS_IDS.EMPTY"
       cdkDrag cdkDragBoundary=".inventory"
+      [item]="item"
+      [hideTooltip]="isDraggable || contextMenu.opened"
+      (cdkDragDropped)="drop($event)"
+      (cdkDragStarted)="onDragStart()"
+      (cdkDragEnded)="onDragEnd()"
+      (contextmenu)="onContextMenu($event, i)"
     ></app-item>
+  </div>
+  <div class="context-menu"
+       *ngIf="contextMenu.opened"
+       [style.left]="contextMenu.posX"
+       [style.top]="contextMenu.posY">
+    <button class="context-menu__button"
+            [disabled]="!inventory[contextMenu.selectedSlot!].stackable"
+            (click)="onSplit()"
+    >Split
+    </button>
+    <button class="context-menu__button" (click)="onDelete()">Delete</button>
   </div>
 </div>

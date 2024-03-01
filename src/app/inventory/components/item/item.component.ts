@@ -17,4 +17,5 @@ import {InventoryItem} from "../../../common/types";
 })
 export class ItemComponent {
   @Input() item!: InventoryItem;
+  @Input() hideTooltip!: boolean;
 }

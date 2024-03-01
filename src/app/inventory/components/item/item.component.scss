@@ -16,6 +16,25 @@
     position: absolute;
     bottom: -1px;
     right: 2px;
+    z-index: 1;
+  }
+
+  &:hover > .tooltip {
+    display: block;
+  }
+
+  .tooltip {
+    z-index: 2;
+    position: absolute;
+    border: 3px solid #c6c6c6;
+    padding: 0.4rem;
+    border-radius: 4px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.65);
+    width: auto;
+    text-align: center;
+    display: none;
+    pointer-events: none;
   }
 
   @media screen and (min-width: 650px) {
@@ -41,6 +60,6 @@
 }
 
 .cdk-drag-dragging {
-  z-index: 1;
+  z-index: 2;
   display: none;
 }
